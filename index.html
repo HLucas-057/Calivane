@@ -280,7 +280,7 @@
 
   @media (max-width: 760px){ .about{ grid-template-columns:1fr; } }
 
-  /* ---------- Carrousel Office de Tourisme (style vitrine, scroll horizontal) ---------- */
+  /* ---------- Carrousel Office de Tourisme ---------- */
   .carousel-container{
     position:relative;
     max-width:100%;
@@ -462,11 +462,18 @@
     background:rgba(255,255,255,0.02);
   }
   .mars-frame{
+    width:100%;
     aspect-ratio:9/16;
     background:#000;
     position:relative;
+    overflow:hidden;
   }
-  .mars-frame video{ width:100%; height:100%; object-fit:cover; }
+  .mars-frame video{ 
+    width:100%; 
+    height:100%; 
+    object-fit:cover; 
+    display:block;
+  }
   .mars-body{ padding:16px; }
   .mars-body h3{ font-size:0.92rem; margin-bottom:4px; font-family:var(--body); font-weight:600; }
   .mars-body p{ font-size:0.82rem; color:rgba(231,226,245,0.6); }
@@ -617,17 +624,16 @@
 
   /* ================= MOBILE OPTIMISATIONS (≤768px) ================= */
   @media (max-width: 768px){
-    /* 1. Espacements verticaux réduits */
     .wrap{ padding-left:16px; padding-right:16px; }
     section{ padding:48px 0; }
     .hero{
-      padding:48px 0 24px;
+      padding:40px 16px 24px;
       grid-template-columns:1fr;
-      gap:32px;
+      gap:28px;
     }
+    .hero-media{ max-width:320px; margin:0 auto; width:100%; box-shadow:6px 6px 0 var(--accent); }
     .section-head{ margin-bottom:28px; }
 
-    /* 2. Carrousel Office de Tourisme : suppression du flou de bord */
     .carousel-viewport{
       padding:0;
       margin:0;
@@ -640,7 +646,6 @@
       scroll-padding-left:16px;
     }
     .video-card{ width:80vw; }
-    /* Le zoom/scale au survol gêne le défilement tactile : on le neutralise */
     .video-card:hover, .video-card:focus-within{
       transform:none;
       box-shadow:none;
@@ -680,7 +685,7 @@
     </div>
   </div>
   <div class="hero-media reveal in">
-    <video autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg">
       <source src="assets/videos/hero-loop.mp4" type="video/mp4">
     </video>
   </div>
@@ -726,7 +731,7 @@
       <div class="carousel-track" id="carouselTrack">
         <article class="video-card">
           <div class="video-frame">
-            <video controls preload="metadata" playsinline poster="assets/images/tourisme-1-poster.jpg">
+            <video controls preload="none" playsinline poster="assets/images/tourisme-1-poster.jpg">
               <source src="assets/videos/tourisme-1.mp4" type="video/mp4">
             </video>
           </div>
@@ -742,7 +747,7 @@
 
         <article class="video-card">
           <div class="video-frame">
-            <video controls preload="metadata" playsinline poster="assets/images/tourisme-2-poster.jpg">
+            <video controls preload="none" playsinline poster="assets/images/tourisme-2-poster.jpg">
               <source src="assets/videos/tourisme-2.mp4" type="video/mp4">
             </video>
           </div>
@@ -758,7 +763,7 @@
 
         <article class="video-card">
           <div class="video-frame">
-            <video controls preload="metadata" playsinline poster="assets/images/tourisme-3-poster.jpg">
+            <video controls preload="none" playsinline poster="assets/images/tourisme-3-poster.jpg">
               <source src="assets/videos/tourisme-3.mp4" type="video/mp4">
             </video>
           </div>
@@ -774,7 +779,7 @@
 
         <article class="video-card">
           <div class="video-frame">
-            <video controls preload="metadata" playsinline poster="assets/images/tourisme-4-poster.jpg">
+            <video controls preload="none" playsinline poster="assets/images/tourisme-4-poster.jpg">
               <source src="assets/videos/tourisme-4.mp4" type="video/mp4">
             </video>
           </div>
@@ -868,7 +873,7 @@
     <div class="mars-grid">
       <article class="mars-card reveal">
         <div class="mars-frame">
-          <video controls preload="metadata" playsinline poster="assets/images/missionmars-1-poster.jpg">
+          <video controls preload="none" playsinline poster="assets/images/missionmars-1-poster.jpg">
             <source src="assets/videos/missionmars-1.mp4" type="video/mp4">
           </video>
         </div>
@@ -879,7 +884,7 @@
       </article>
       <article class="mars-card reveal">
         <div class="mars-frame">
-          <video controls preload="metadata" playsinline poster="assets/images/missionmars-2-poster.jpg">
+          <video controls preload="none" playsinline poster="assets/images/missionmars-2-poster.jpg">
             <source src="assets/videos/missionmars-2.mp4" type="video/mp4">
           </video>
         </div>
@@ -890,7 +895,7 @@
       </article>
       <article class="mars-card reveal">
         <div class="mars-frame">
-          <video controls preload="metadata" playsinline poster="assets/images/missionmars-3-poster.jpg">
+          <video controls preload="none" playsinline poster="assets/images/missionmars-3-poster.jpg">
             <source src="assets/videos/missionmars-3.mp4" type="video/mp4">
           </video>
         </div>
@@ -1105,7 +1110,7 @@
   }, { threshold: 0.5 });
   statNums.forEach(el => statObserver.observe(el));
 
-  // Carrousel Office de Tourisme — défilement horizontal natif, style vitrine
+  // Carrousel Office de Tourisme
   const container = document.getElementById('carouselContainer');
   const viewport = document.getElementById('carouselViewport');
   const track = document.getElementById('carouselTrack');
