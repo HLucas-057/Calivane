@@ -685,7 +685,7 @@
     </div>
   </div>
   <div class="hero-media reveal in">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg">
+    <video autoplay muted loop playsinline preload="auto" poster="assets/images/hero-poster.jpg">
       <source src="assets/videos/hero-loop.mp4" type="video/mp4">
     </video>
   </div>
@@ -1046,6 +1046,15 @@
 </footer>
 
 <script>
+  // Force le déclenchement du Hero sur Safari mobile / Chrome
+  const heroVid = document.querySelector('.hero-media video');
+  if (heroVid) {
+    heroVid.muted = true;
+    const startHero = () => heroVid.play().catch(() => {});
+    startHero();
+    window.addEventListener('touchstart', startHero, { once: true });
+  }
+
   const burger = document.getElementById('burgerBtn');
   const navLinks = document.getElementById('navLinks');
   if (burger && navLinks) {
