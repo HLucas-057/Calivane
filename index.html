@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Devanture — Vidéo &amp; réseaux</title>
 <meta name="description" content="Vidéos courtes et publications pensées pour donner envie de pousser votre porte, dans le Bas-Rhin.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -578,7 +578,21 @@
 
   @media (max-width:760px){ .contact{ grid-template-columns:1fr; } }
 
-  footer{ background:var(--ink); color:rgba(251,250,247,0.7); }
+footer{
+    background:var(--ink);
+    color:rgba(251,250,247,0.7);
+    position:relative;
+  }
+  footer::after{
+    content:"";
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    height:100vh;
+    background:var(--ink);
+    pointer-events:none;
+  }
   .footer-top{
     padding:72px 0 48px;
     display:grid;
@@ -615,7 +629,7 @@
 
   .footer-bottom{
     border-top:1px solid rgba(251,250,247,0.12);
-    padding:24px 0;
+    padding:24px 0 calc(24px + env(safe-area-inset-bottom, 0px));
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
@@ -625,7 +639,6 @@
   }
 
   @media (max-width:760px){ .footer-top{ grid-template-columns:1fr; gap:36px; } }
-
   /* ================= MOBILE OPTIMISATIONS (≤768px) ================= */
   @media (max-width: 768px){
     .wrap{ padding-left:16px; padding-right:16px; }
