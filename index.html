@@ -32,9 +32,13 @@
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ 
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+  width:100%;
+}
 @media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior:auto; background-color: var(--ink); }
+  html{ scroll-behavior:auto; }
   *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
 }
 
@@ -46,7 +50,9 @@ body{
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
-  overscroll-behavior-y: none;
+  overflow-x:hidden;
+  width:100%;
+  position:relative;
 }
 
 img,video{ max-width:100%; display:block; }
@@ -70,7 +76,6 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; margin:0; letter-spacing:
 p{ margin:0 0 1em; }
 p:last-child{ margin-bottom:0; }
 
-/* Boutons génériques */
 .btn{
   display:inline-block;
   padding:14px 26px;
@@ -87,11 +92,9 @@ p:last-child{ margin-bottom:0; }
 .btn-ghost{ background:transparent; border-color:var(--ink); color:var(--ink); }
 .btn-ghost:hover{ background:var(--ink); color:var(--paper); }
 
-/* Reveal au scroll */
 .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.6s ease, transform 0.6s ease; }
 .reveal.in{ opacity:1; transform:none; }
 
-/* Séparateurs de section */
 .awning{ height:6px; width:100%; }
 .awning--to-paper, .awning--to-navy{ background:var(--accent); }
 .awning--to-paper2{ background:var(--violet); }
@@ -192,7 +195,7 @@ header{
 .about-text strong{ color:var(--ink); }
 
 /* ===================== 5. CARROUSEL OFFICE DE TOURISME ===================== */
-.carousel-container{ position:relative; max-width:100%; margin:0 auto; }
+.carousel-container{ position:relative; max-width:100%; margin:0 auto; overflow:hidden; }
 .carousel-viewport{
   position:relative;
   width:100%;
@@ -287,6 +290,7 @@ header{
 .dark{
   background:radial-gradient(ellipse at 20% 0%, var(--navy-soft) 0%, var(--navy) 55%);
   color:var(--star);
+  overflow:hidden;
 }
 .dark .section-head p{ color:rgba(231,226,245,0.7); }
 .dark h2, .dark h3{ font-family:var(--mono-display); font-weight:600; }
@@ -348,6 +352,16 @@ header{
 
 /* ===================== 10. FOOTER ===================== */
 footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
+footer::after{
+  content:"";
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  height:100vh;
+  background:var(--ink);
+  pointer-events:none;
+}
 .footer-top{ padding:72px 0 48px; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px; }
 .footer-brand .logo{ color:var(--paper-soft); }
 .footer-brand .logo span{ color:var(--accent); }
@@ -402,36 +416,50 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
   .burger{ display:flex; }
 }
 
-/* Regroupe les sections qui basculent en 1 colonne à 760px */
-@media (max-width: 760px){
-  .about{ grid-template-columns:1fr; }
-  .mars-grid{ grid-template-columns:1fr 1fr; }
-  .contact{ grid-template-columns:1fr; }
-  .post-row{ grid-template-columns:1fr; }
-  .post-card{ transform:none; }
-}
-
-@media (max-width: 600px){
-  .price-grid{ grid-template-columns:1fr; }
-}
-
-@media (max-width: 520px){
-  .mars-grid{ grid-template-columns:1fr; }
-}
-
 @media (max-width: 768px){
   .wrap{ padding-left:16px; padding-right:16px; }
   section{ padding:48px 0; }
+  
   .hero{ padding:40px 16px 24px; grid-template-columns:1fr; gap:28px; }
   .hero-media{ max-width:320px; margin:0 auto; width:100%; box-shadow:6px 6px 0 var(--accent); }
   .section-head{ margin-bottom:28px; }
 
-  .carousel-viewport{ padding:0; margin:0; -webkit-mask-image:none !important; mask-image:none !important; }
-  .carousel-track{ gap:14px; padding:0 16px; scroll-padding-left:16px; }
+  .about{ grid-template-columns:1fr; gap:32px; }
+
+  /* Carrousel ajusté pour mobile */
+  .carousel-viewport{ 
+    padding:0; 
+    margin:0; 
+    -webkit-mask-image:none !important; 
+    mask-image:none !important; 
+  }
+  .carousel-track{ 
+    gap:14px; 
+    padding:0 16px; 
+    scroll-padding-left:16px; 
+  }
   .video-card{ width:80vw; }
   .video-card:hover, .video-card:focus-within{ transform:none; box-shadow:none; border-color:var(--line); }
   .carousel-arrow{ display:none; }
+
+  .post-row{ grid-template-columns:1fr; }
+  .post-card{ transform:none; }
+
+  /* Grille des stats sur mobile (2 colonnes pour éviter le débordement) */
+  .stat-grid{ grid-template-columns:1fr 1fr; gap:12px; margin:32px 0 36px; }
+  .stat{ padding:18px 14px; }
+  .stat .num{ font-size:1.7rem; }
+
+  .mars-grid{ grid-template-columns:1fr; gap:18px; margin-bottom:32px; }
+
+  .contact{ grid-template-columns:1fr; gap:28px; }
+  .contact-card{ padding:26px 20px; }
+
   .footer-top{ grid-template-columns:1fr; gap:36px; }
+}
+
+@media (max-width: 600px){
+  .price-grid{ grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -508,7 +536,7 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
     <button class="carousel-arrow next" id="arrowNext" aria-label="Suivant">›</button>
 
     <div class="carousel-viewport" id="carouselViewport">
-      <div class="carousel-track" id="carouselTrack"><!-- généré en JS, voir tourismeVideos --></div>
+      <div class="carousel-track" id="carouselTrack"></div>
     </div>
   </div>
 </section>
@@ -521,7 +549,7 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
     <p>Chaque publication combine un cadrage soigné, une identité visuelle claire et une accroche conçue pour capter l'intérêt et déclencher l'action.</p>
   </div>
 
-  <div class="post-row" id="postRow"><!-- généré en JS, voir posts --></div>
+  <div class="post-row" id="postRow"></div>
 
   <p class="post-disclaimer reveal">* Déclinaisons graphiques et études de style conçues pour illustrer la gestion de grille sur différents secteurs d'activité.</p>
 </section>
@@ -544,7 +572,7 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
       <div class="stat reveal"><div class="num" data-target="3" data-suffix=" mois">0</div><div class="label">Depuis le lancement (mi-mai)</div></div>
     </div>
 
-    <div class="mars-grid" id="marsGrid"><!-- généré en JS, voir marsVideos --></div>
+    <div class="mars-grid" id="marsGrid"></div>
 
     <p class="mars-note reveal">Mission Mars n'est pas une prestation commerciale : c'est mon terrain d'entraînement. C'est là que j'ai appris à écrire une accroche efficace, à rythmer un montage pour éviter le décrochage, et à analyser des statistiques pour comprendre ce qui fonctionne réellement. Ce sont ces mêmes réflexes que j'applique à vos vidéos.</p>
 
@@ -689,7 +717,6 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
 (function(){
   "use strict";
 
-  /* ---------- Données des cartes (source unique, plus de HTML dupliqué) ---------- */
   const tourismeVideos = [
     {
       title: "L'Épicurie Fine — épicerie fine",
@@ -763,7 +790,6 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
     }
   ];
 
-  /* ---------- Templates ---------- */
   const renderVideoCard = (v) => `
     <article class="video-card">
       <div class="video-frame">
@@ -809,7 +835,6 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
     if (postRow) postRow.innerHTML = posts.map(renderPostCard).join("");
   }
 
-  /* ---------- Hero autoplay (fix Safari/Chrome mobile) ---------- */
   function initHeroVideo(){
     const heroVid = document.querySelector(".hero-media video");
     if (!heroVid) return;
@@ -819,7 +844,6 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
     window.addEventListener("touchstart", start, { once: true });
   }
 
-  /* ---------- Menu burger ---------- */
   function initBurgerMenu(){
     const burger = document.getElementById("burgerBtn");
     const navLinks = document.getElementById("navLinks");
@@ -836,7 +860,6 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
     });
   }
 
-  /* ---------- Reveal au scroll ---------- */
   function initRevealOnScroll(prefersReduced){
     const revealEls = document.querySelectorAll(".reveal");
     if (prefersReduced){
@@ -854,7 +877,6 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
     revealEls.forEach(el => observer.observe(el));
   }
 
-  /* ---------- Compteurs animés ---------- */
   const formatNumber = (n) => n.toLocaleString("fr-FR");
 
   function animateCount(el, prefersReduced){
@@ -889,7 +911,6 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
     statNums.forEach(el => observer.observe(el));
   }
 
-  /* ---------- Carrousel Office de Tourisme ---------- */
   function initCarousel(prefersReduced){
     const container = document.getElementById("carouselContainer");
     const track = document.getElementById("carouselTrack");
@@ -919,7 +940,6 @@ footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
     updateArrowState();
   }
 
-  /* ---------- Init ---------- */
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   mountCards();
