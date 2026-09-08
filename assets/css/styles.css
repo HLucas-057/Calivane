@@ -277,7 +277,7 @@ section {
 
 .btn-primary {
     background: var(--accent);
-    color: var(--paper-soft);
+    color: var(--paper-soft) !important;
 }
 
 .btn-primary:hover {
