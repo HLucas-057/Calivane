@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hlucas-057.github.io/Calivane/sitemap.xml

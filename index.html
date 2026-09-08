@@ -1,972 +1,819 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Devanture — Vidéo &amp; réseaux</title>
-<meta name="description" content="Vidéos courtes et publications pensées pour donner envie de pousser votre porte, dans le Bas-Rhin.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ===================== 1. TOKENS / RESET ===================== */
-:root{
-  --paper:#F2EFE9;
-  --paper-soft:#FBFAF7;
-  --ink:#1A1D2B;
-  --ink-soft:#565A6C;
-  --navy:#10121F;
-  --navy-soft:#191C33;
-  --star:#E7E2F5;
-  --accent:#B3502B;
-  --accent-deep:#7C371C;
-  --violet:#8B6BFF;
-  --nebula:#E85C8A;
-  --line: rgba(26,29,43,0.13);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  --display: 'Fraunces', serif;
-  --mono-display: 'Space Grotesk', sans-serif;
-  --body: 'Inter', sans-serif;
+  <title>Vidéos pour professionnels à Haguenau et dans le Bas-Rhin | Calivane Studio</title>
+  <meta name="description" content="Tournage, montage de vidéos courtes et création de publications pour les commerçants, artisans et professionnels à Haguenau et dans le Bas-Rhin.">
 
-  --maxw: 1180px;
-}
+  <meta name="robots" content="noindex, nofollow">
+  <!-- TODO AVANT PUBLICATION : modifier l’indexation selon les instructions du README. -->
+  <!-- TODO AVANT PUBLICATION : passer la page d’accueil en index, follow au lancement commercial. -->
 
-*,*::before,*::after{ box-sizing:border-box; }
-html{ 
-  scroll-behavior:smooth;
-  overflow-x:clip;
-  width:100%;
-}
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior:auto; }
-  *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
-}
+  <link rel="canonical" href="https://hlucas-057.github.io/Calivane/">
 
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--body);
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:clip;
-  width:100%;
-  position:relative;
-}
+  <meta property="og:title" content="Vidéos pour professionnels à Haguenau et dans le Bas-Rhin | Calivane Studio">
+  <meta property="og:description" content="Tournage, montage de vidéos courtes et création de publications pour les commerçants, artisans et professionnels à Haguenau et dans le Bas-Rhin.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://hlucas-057.github.io/Calivane/">
+  <meta property="og:image" content="https://hlucas-057.github.io/Calivane/assets/images/og-calivane.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Calivane Studio — Vidéos pour professionnels à Haguenau et dans le Bas-Rhin">
 
-img,video{ max-width:100%; display:block; }
-a{ color:inherit; }
-:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; }
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vidéos pour professionnels à Haguenau et dans le Bas-Rhin | Calivane Studio">
+  <meta name="twitter:description" content="Tournage, montage de vidéos courtes et création de publications pour les commerçants, artisans et professionnels à Haguenau et dans le Bas-Rhin.">
+  <meta name="twitter:image" content="https://hlucas-057.github.io/Calivane/assets/images/og-calivane.png">
+  <meta name="twitter:image:alt" content="Calivane Studio — Vidéos pour professionnels à Haguenau et dans le Bas-Rhin">
 
-.wrap{ max-width:var(--maxw); margin:0 auto; padding-left:28px; padding-right:28px; }
+  <!-- TODO AVANT PUBLICATION : mettre à jour canonical, og:url, og:image, sitemap.xml, robots.txt et site.webmanifest en cas de changement de domaine. -->
+  <!-- TODO AVANT PUBLICATION : générer assets/images/og-calivane.png en 1200 × 630 px à partir du fichier SVG source. -->
 
-h1,h2,h3{ font-family:var(--display); font-weight:600; margin:0; letter-spacing:-0.01em; }
+  <meta name="theme-color" content="#F2EFE9">
 
-.eyebrow{
-  font-family:var(--mono-display);
-  font-size:0.78rem;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--accent);
-  font-weight:600;
-}
-.dark .eyebrow{ color:var(--nebula); }
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-p{ margin:0 0 1em; }
-p:last-child{ margin-bottom:0; }
+  <!-- TODO AVANT PUBLICATION : générer et ajouter les icônes PNG attendues dans assets/icons/. -->
+  <!-- TODO AVANT PUBLICATION : ajouter les polices WOFF2 dans assets/fonts/ et conserver leurs licences officielles. -->
 
-.btn{
-  display:inline-block;
-  padding:14px 26px;
-  border-radius:3px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:0.95rem;
-  border:1px solid transparent;
-  transition:transform 0.15s ease, background 0.2s ease;
-}
-.btn:hover{ transform:translateY(-2px); }
-.btn-primary{ background:var(--accent); color:var(--paper-soft); }
-.btn-primary:hover{ background:var(--accent-deep); }
-.btn-ghost{ background:transparent; border-color:var(--ink); color:var(--ink); }
-.btn-ghost:hover{ background:var(--ink); color:var(--paper); }
-
-.reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.6s ease, transform 0.6s ease; }
-.reveal.in{ opacity:1; transform:none; }
-
-.awning{ height:6px; width:100%; }
-.awning--to-paper, .awning--to-navy{ background:var(--accent); }
-.awning--to-paper2{ background:var(--violet); }
-
-section{ padding:88px 0; scroll-margin-top:96px; }
-.section-head{ max-width:640px; margin-bottom:64px; }
-.section-head h2{ font-size:clamp(1.8rem, 3vw, 2.5rem); margin-top:18px; }
-.section-head p{ margin-top:20px; color:var(--ink-soft); font-size:1.02rem; }
-
-/* ===================== 2. HEADER ===================== */
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(240,230,210,0.88);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 28px;
-  max-width:var(--maxw);
-  margin:0 auto;
-}
-.logo{ font-family:var(--display); font-weight:700; font-size:1.35rem; letter-spacing:-0.02em; }
-.logo span{ color:var(--accent); }
-
-.nav-links{ display:flex; gap:32px; list-style:none; margin:0; padding:0; font-size:0.92rem; font-weight:500; }
-.nav-links a{ text-decoration:none; padding:6px 2px; border-bottom:2px solid transparent; transition:border-color 0.2s ease; }
-.nav-links a:hover{ border-color:var(--accent); }
-
-.nav-cta{
-  background:var(--accent);
-  color:var(--paper-soft);
-  padding:10px 20px;
-  border-radius:3px;
-  text-decoration:none;
-  font-size:0.9rem;
-  font-weight:600;
-  white-space:nowrap;
-}
-.nav-cta:hover{ background:var(--accent-deep); }
-
-.burger{
-  display:none;
-  background:none;
-  border:1px solid var(--ink);
-  border-radius:3px;
-  width:42px; height:38px;
-  cursor:pointer;
-  align-items:center;
-  justify-content:center;
-}
-.burger span, .burger span::before, .burger span::after{
-  content:"";
-  display:block;
-  width:20px; height:2px;
-  background:var(--ink);
-  position:relative;
-  transition:transform 0.2s ease, opacity 0.2s ease;
-}
-.burger span::before{ position:absolute; top:-6px; }
-.burger span::after{ position:absolute; top:6px; }
-
-/* ===================== 3. HERO ===================== */
-.hero{
-  padding:96px 0 60px;
-  display:grid;
-  grid-template-columns:1.15fr 0.85fr;
-  gap:56px;
-  align-items:center;
-}
-.hero h1{ font-size:clamp(2.4rem, 4.6vw, 3.6rem); line-height:1.06; }
-.hero h1 em{ font-style:italic; color:var(--accent); }
-.hero-sub{ margin-top:22px; font-size:1.08rem; color:var(--ink-soft); max-width:46ch; }
-.hero-actions{ margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
-
-.hero-media{
-  position:relative;
-  aspect-ratio:4/5;
-  border-radius:6px;
-  overflow:hidden;
-  border:1px solid var(--line);
-  box-shadow:10px 10px 0 var(--accent);
-}
-.hero-media video{ width:100%; height:100%; object-fit:cover; }
-
-/* ===================== 4. ABOUT ===================== */
-.about{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start; }
-.about-card{ background:var(--paper-soft); border:1px solid var(--line); border-radius:6px; padding:28px; }
-.about-card h3{ font-size:1.1rem; margin-bottom:6px; }
-.about-card .role{ color:var(--accent); font-weight:600; font-size:0.92rem; margin-bottom:18px; }
-.tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
-.tag{ font-family:var(--mono-display); font-size:0.78rem; padding:6px 12px; border:1px solid var(--ink); border-radius:20px; }
-.about-text p{ color:var(--ink-soft); font-size:1.02rem; }
-.about-text strong{ color:var(--ink); }
-
-/* ===================== 5. CARROUSEL OFFICE DE TOURISME ===================== */
-.carousel-container{ position:relative; max-width:100%; margin:0 auto; overflow:hidden; }
-.carousel-viewport{
-  position:relative;
-  width:100%;
-  padding:14px 0 28px;
-  margin:-14px 0 -28px;
-  -webkit-mask-image:linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
-  mask-image:linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
-}
-.carousel-track{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-padding-left:40px;
-  padding:0 40px;
-  -ms-overflow-style:none;
-  scrollbar-width:none;
-}
-.carousel-track::-webkit-scrollbar{ display:none; }
-
-.video-card{
-  flex:0 0 auto;
-  width:min(258px, 72vw);
-  scroll-snap-align:start;
-  background:var(--paper-soft);
-  border:1px solid var(--line);
-  border-radius:8px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  transition:transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-  transform-origin:center bottom;
-}
-.video-card:hover, .video-card:focus-within{
-  transform:translateY(-8px) scale(1.045);
-  box-shadow:0 22px 40px -18px rgba(26,29,43,0.35);
-  border-color:var(--accent);
-  z-index:2;
-}
-.video-frame{ width:100%; aspect-ratio:9/16; background:#000; position:relative; overflow:hidden; }
-.video-frame video{ width:100%; height:100%; object-fit:cover; display:block; }
-.video-body{ padding:18px; flex-grow:1; display:flex; flex-direction:column; }
-.video-body h3{ font-size:0.98rem; margin-bottom:6px; }
-.video-body p{ color:var(--ink-soft); font-size:0.88rem; line-height:1.4; flex-grow:1; }
-.video-meta{ display:flex; gap:6px; margin-top:12px; flex-wrap:wrap; }
-.chip{
-  font-size:0.72rem;
-  font-family:var(--mono-display);
-  padding:4px 10px;
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:20px;
-  color:var(--ink-soft);
-}
-
-.carousel-arrow{
-  position:absolute;
-  top:38%;
-  transform:translateY(-50%);
-  background:var(--paper-soft);
-  border:1px solid var(--line);
-  color:var(--ink);
-  width:44px; height:44px;
-  border-radius:50%;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.4rem;
-  z-index:10;
-  box-shadow:0 4px 12px rgba(0,0,0,0.14);
-  transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
-}
-.carousel-arrow:hover{ background:var(--accent); color:var(--paper-soft); border-color:var(--accent); }
-.carousel-arrow.is-hidden{ opacity:0; visibility:hidden; pointer-events:none; }
-.carousel-arrow.prev{ left:-8px; }
-.carousel-arrow.next{ right:-8px; }
-
-/* ===================== 6. POSTS ===================== */
-.post-row{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
-.post-card{ background:var(--paper-soft); border:1px solid var(--line); border-radius:6px; overflow:hidden; transform:rotate(var(--tilt, 0deg)); }
-.post-card:nth-child(1){ --tilt:-1.4deg; }
-.post-card:nth-child(3){ --tilt:1.2deg; }
-.post-frame{ aspect-ratio:4/5; background:transparent; display:flex; align-items:center; justify-content:center; padding:0; overflow:hidden; }
-.post-frame img{ width:100%; height:100%; object-fit:cover; }
-.post-body{ padding:22px; }
-.post-body h3{ font-size:0.98rem; margin-bottom:6px; }
-.post-body p{ font-size:0.9rem; color:var(--ink-soft); }
-.post-disclaimer{ margin-top:28px; font-size:0.82rem; color:var(--ink-soft); font-style:italic; }
-
-/* ===================== 7. MISSION MARS (dark) ===================== */
-.dark{
-  background:radial-gradient(ellipse at 20% 0%, var(--navy-soft) 0%, var(--navy) 55%);
-  color:var(--star);
-  overflow:hidden;
-  width:100%;
-}
-.dark .section-head p{ color:rgba(231,226,245,0.7); }
-.dark h2, .dark h3{ font-family:var(--mono-display); font-weight:600; }
-
-.stat-grid{ 
-  display:grid; 
-  grid-template-columns:repeat(4, minmax(0, 1fr)); 
-  gap:20px; 
-  margin:52px 0 64px; 
-}
-.stat{ 
-  border:1px solid rgba(231,226,245,0.16); 
-  border-radius:6px; 
-  padding:26px 20px; 
-  background:rgba(139,107,255,0.06); 
-  min-width:0;
-}
-.stat .num{
-  font-family:var(--mono-display);
-  font-size:clamp(1.7rem, 3vw, 2.3rem);
-  font-weight:700;
-  color:var(--nebula);
-  font-variant-numeric:tabular-nums;
-  white-space:nowrap;
-}
-.stat .label{ margin-top:8px; font-size:0.82rem; color:rgba(231,226,245,0.65); }
-
-.mars-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-bottom:56px; }
-.mars-card{ border:1px solid rgba(231,226,245,0.16); border-radius:6px; overflow:hidden; background:rgba(255,255,255,0.02); }
-.mars-frame{ width:100%; aspect-ratio:9/16; background:#000; position:relative; overflow:hidden; }
-.mars-frame video{ width:100%; height:100%; object-fit:cover; display:block; }
-.mars-body{ padding:16px; }
-.mars-body h3{ font-size:0.92rem; margin-bottom:4px; font-family:var(--body); font-weight:600; }
-.mars-body p{ font-size:0.82rem; color:rgba(231,226,245,0.6); }
-
-.mars-note{ max-width:680px; border-left:2px solid var(--nebula); padding-left:24px; color:rgba(231,226,245,0.78); }
-
-.tools-row{ margin-top:40px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-.tools-row .label{ font-family:var(--mono-display); font-size:0.78rem; color:rgba(231,226,245,0.5); margin-right:6px; }
-.tool-chip{ font-size:0.8rem; padding:6px 14px; border:1px solid rgba(231,226,245,0.25); border-radius:20px; color:var(--star); }
-
-/* ===================== 8. TARIFS ===================== */
-.price-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
-.price-card{ background:var(--paper-soft); border:1px solid var(--line); border-radius:6px; padding:30px 26px; display:flex; flex-direction:column; }
-.price-card.featured{ border-color:var(--accent); box-shadow:6px 6px 0 var(--accent); }
-.price-card .price-label{ font-family:var(--mono-display); font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); }
-.price-card h3{ font-size:1.15rem; margin-top:8px; }
-.price-card .amount{ font-family:var(--mono-display); font-size:2rem; font-weight:700; margin:18px 0 6px; }
-.price-card .amount small{ font-size:0.9rem; font-weight:500; color:var(--ink-soft); }
-.price-card ul{ list-style:none; padding:0; margin:18px 0 0; font-size:0.9rem; color:var(--ink-soft); flex-grow:1; }
-.price-card li{ padding:7px 0; border-top:1px solid var(--line); }
-.price-card li:first-child{ border-top:none; }
-.price-note{ margin-top:36px; background:var(--paper); border:1px dashed var(--ink); border-radius:6px; padding:22px 26px; font-size:0.92rem; color:var(--ink-soft); }
-
-/* ===================== 9. CONTACT ===================== */
-.contact{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
-.contact-card{ background:var(--accent); color:var(--paper-soft); border-radius:8px; padding:40px; }
-.contact-card h2{ font-size:1.9rem; color:var(--paper-soft); }
-.contact-list{ margin-top:28px; }
-.contact-list a{
-  display:block;
-  text-decoration:none;
-  color:var(--paper-soft);
-  font-family:var(--mono-display);
-  font-size:1.05rem;
-  padding:14px 0;
-  border-top:1px solid rgba(248,242,228,0.25);
-}
-.contact-list a:first-child{ border-top:none; }
-.contact-side p{ color:var(--ink-soft); font-size:1rem; max-width:44ch; }
-
-/* ===================== 10. FOOTER ===================== */
-footer{ background:var(--ink); color:rgba(251,250,247,0.7); position:relative; }
-.footer-top{ padding:72px 0 48px; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px; }
-.footer-brand .logo{ color:var(--paper-soft); }
-.footer-brand .logo span{ color:var(--accent); }
-.footer-brand p{ margin-top:16px; max-width:36ch; font-size:0.95rem; color:rgba(251,250,247,0.6); }
-.footer-col h4{
-  font-family:var(--mono-display);
-  font-size:0.78rem;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:rgba(251,250,247,0.45);
-  margin-bottom:18px;
-  font-weight:600;
-}
-.footer-col ul{ list-style:none; margin:0; padding:0; }
-.footer-col li{ margin-bottom:12px; }
-.footer-col a{ text-decoration:none; color:rgba(251,250,247,0.82); font-size:0.95rem; transition:color 0.2s ease; }
-.footer-col a:hover{ color:var(--accent); }
-.footer-col .muted{ color:rgba(251,250,247,0.5); font-size:0.85rem; }
-
-.footer-bottom{
-  border-top:1px solid rgba(251,250,247,0.12);
-  padding:24px 0 calc(24px + env(safe-area-inset-bottom, 0px));
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:10px;
-  font-size:0.82rem;
-  color:rgba(251,250,247,0.45);
-}
-
-/* ===================== 11. RESPONSIVE ===================== */
-@media (max-width: 900px){
-  .price-grid{ grid-template-columns:1fr 1fr; }
-}
-
-@media (max-width: 860px){
-  .nav-links{
-    position:absolute;
-    top:100%; left:0; right:0;
-    background:var(--paper-soft);
-    flex-direction:column;
-    gap:0;
-    border-bottom:1px solid var(--line);
-    max-height:0;
-    overflow:hidden;
-    transition:max-height 0.3s ease;
-  }
-  .nav-links.open{ max-height:340px; }
-  .nav-links li{ border-top:1px solid var(--line); }
-  .nav-links a{ display:block; padding:16px 28px; border-bottom:none; }
-  .nav-cta{ display:none; }
-  .burger{ display:flex; }
-}
-
-@media (max-width: 768px){
-  .wrap{ padding-left:16px; padding-right:16px; }
-  section{ padding:48px 0; }
-  
-  .hero{ padding:40px 16px 24px; grid-template-columns:1fr; gap:28px; }
-  .hero-media{ max-width:320px; margin:0 auto; width:100%; box-shadow:6px 6px 0 var(--accent); }
-  .section-head{ margin-bottom:28px; }
-
-  .about{ grid-template-columns:1fr; gap:32px; }
-
-  /* Carrousel ajusté pour mobile */
-  .carousel-container{ width:100%; max-width:100%; overflow:hidden; }
-  .carousel-viewport{ 
-    padding:0; 
-    margin:0; 
-    width:100%;
-    -webkit-mask-image:none !important; 
-    mask-image:none !important; 
-  }
-  .carousel-track{ 
-    gap:14px; 
-    padding:0 16px; 
-    scroll-padding-left:16px; 
-    width:100%;
-  }
-  .video-card{ 
-    width:76vw; 
-    max-width:280px;
-    flex-shrink:0;
-  }
-  .video-card:hover, .video-card:focus-within{ transform:none; box-shadow:none; border-color:var(--line); }
-  .carousel-arrow{ display:none; }
-
-  .post-row{ grid-template-columns:1fr; }
-  .post-card{ transform:none; }
-
-  /* Grille des stats sur mobile (2x2 garanti sans débordement) */
-  .stat-grid{ 
-    grid-template-columns:repeat(2, minmax(0, 1fr)) !important; 
-    gap:12px !important; 
-    margin:32px 0 36px !important; 
-    width:100% !important;
-  }
-  .stat{ 
-    padding:16px 12px !important; 
-    min-width:0 !important;
-    overflow:hidden !important;
-  }
-  .stat .num{ 
-    font-size:1.35rem !important; 
-  }
-  .stat .label{
-    font-size:0.75rem !important;
-  }
-
-  .mars-grid{ grid-template-columns:1fr; gap:18px; margin-bottom:32px; }
-
-  .contact{ grid-template-columns:1fr; gap:28px; }
-  .contact-card{ padding:26px 20px; }
-
-  .footer-top{ grid-template-columns:1fr; gap:36px; }
-}
-
-@media (max-width: 600px){
-  .price-grid{ grid-template-columns:1fr; }
-}
-</style>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
-<header>
-  <nav class="nav">
-    <div class="logo">Devanture<span>.</span></div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#tourisme">Office de Tourisme</a></li>
-      <li><a href="#missionmars">Mission Mars</a></li>
-      <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Demander un devis</a>
-    <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span>
-    </button>
-  </nav>
-</header>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="logo" href="index.html" aria-label="Calivane Studio — Accueil" aria-current="page">
+        <span class="logo-main">Calivane<span class="logo-dot" aria-hidden="true">.</span></span>
+        <span class="logo-studio">Studio</span>
+      </a>
 
-<section class="hero wrap">
-  <div class="reveal in">
-    <p class="eyebrow">Vidéo &amp; réseaux sociaux — Bas-Rhin</p>
-    <h1>Une vidéo qui donne envie de pousser <em>votre porte</em>.</h1>
-    <p class="hero-sub">Je conçois des vidéos courtes et des publications adaptées aux commerces du Bas-Rhin, pensées pour retenir l'attention et donner une raison concrète de pousser votre porte.</p>
-    <div class="hero-actions">
-      <a href="#tourisme" class="btn btn-primary">Voir mes réalisations</a>
-      <a href="#tarifs" class="btn btn-ghost">Voir les tarifs</a>
-    </div>
-  </div>
-  <div class="hero-media reveal in">
-    <video autoplay muted loop playsinline preload="auto" poster="assets/images/hero-poster.jpg">
-      <source src="assets/videos/hero-loop.mp4" type="video/mp4">
-    </video>
-  </div>
-</section>
-
-<div class="awning awning--to-paper"></div>
-
-<section class="wrap about">
-  <div class="about-card reveal">
-    <p class="eyebrow">À propos</p>
-    <h3 style="margin-top:10px;">Lucas Hoffmann</h3>
-    <p class="role">Étudiant BUT MMI · 3<sup>e</sup> année</p>
-    <p style="color:var(--ink-soft); font-size:0.94rem;">Ancien stagiaire vidéo et réseaux sociaux à l'Office de Tourisme du Pays de Haguenau. Basé dans le Bas-Rhin, disponible pour des missions de montage à distance.</p>
-    <div class="tag-row">
-      <span class="tag">Montage vidéo</span>
-      <span class="tag">Création de posts</span>
-      <span class="tag">CapCut</span>
-      <span class="tag">Canva</span>
-    </div>
-  </div>
-  <div class="about-text reveal">
-    <p class="eyebrow">En quelques mots</p>
-    <h2 style="margin-top:10px; font-size:1.6rem;">Un stage à l'Office de Tourisme, complété par un projet personnel suivi par plus de 10 000 abonnés.</h2>
-    <p style="margin-top:18px;">Pendant mon stage à <strong>l'Office de Tourisme du Pays de Haguenau</strong>, j'ai réalisé et monté les vidéos de valorisation des adhérents du territoire (gîtes, centres de loisirs, boutiques) et rédigé les publications associées. Chaque vidéo poursuivait le même objectif : donner une raison concrète de visiter le lieu ou de privilégier les commerces locaux.</p>
-    <p>En parallèle, je gère <strong>Mission Mars</strong>, un compte que j'ai lancé par intérêt personnel et qui a dépassé 10 000 abonnés en trois mois. Ce n'est pas un projet client, mais il illustre une compétence directement utile pour vous : la capacité à construire une vidéo qui retient l'attention jusqu'à son terme.</p>
-  </div>
-</section>
-
-<section id="tourisme" class="wrap">
-  <div class="section-head reveal">
-    <p class="eyebrow">Réalisations — Office de Tourisme du Pays de Haguenau</p>
-    <h2>Capter le regard en 20 secondes, donner envie de venir le week-end même.</h2>
-    <p>Chaque vidéo répond à un même objectif : présenter un adhérent du territoire de façon à susciter l'envie de le découvrir.</p>
-  </div>
-
-  <div class="carousel-container reveal" id="carouselContainer">
-    <button class="carousel-arrow prev is-hidden" id="arrowPrev" aria-label="Précédent">‹</button>
-    <button class="carousel-arrow next" id="arrowNext" aria-label="Suivant">›</button>
-
-    <div class="carousel-viewport" id="carouselViewport">
-      <div class="carousel-track" id="carouselTrack"></div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="section-head reveal">
-    <p class="eyebrow">Publications &amp; réseaux</p>
-    <h2>Des publications soignées, pensées pour valoriser chaque commerce.</h2>
-    <p>Chaque publication combine un cadrage soigné, une identité visuelle claire et une accroche conçue pour capter l'intérêt et déclencher l'action.</p>
-  </div>
-
-  <div class="post-row" id="postRow"></div>
-
-  <p class="post-disclaimer reveal">* Déclinaisons graphiques et études de style conçues pour illustrer la gestion de grille sur différents secteurs d'activité.</p>
-</section>
-
-<div class="awning awning--to-navy"></div>
-
-<section id="missionmars" class="dark">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Projet personnel</p>
-      <h2>Mission Mars</h2>
-      <p>Un compte lancé par intérêt personnel pour raconter l'espace autrement, sans budget ni client. En trois mois, il a rassemblé une audience réelle, preuve d'une capacité à construire une vidéo qui retient l'attention jusqu'à son terme, pas seulement qui capte au démarrage.</p>
-    </div>
-
-    <div class="stat-grid" id="statGrid">
-      <div class="stat reveal"><div class="num" data-target="10554">0</div><div class="label">Abonnés</div></div>
-      <div class="stat reveal"><div class="num" data-target="1400000" data-suffix="+">0</div><div class="label">Vues cumulées</div></div>
-      <div class="stat reveal"><div class="num" data-target="492896">0</div><div class="label">Vues sur la vidéo la plus vue</div></div>
-      <div class="stat reveal"><div class="num" data-target="3" data-suffix=" mois">0</div><div class="label">Depuis le lancement (mi-mai)</div></div>
-    </div>
-
-    <div class="mars-grid" id="marsGrid"></div>
-
-    <p class="mars-note reveal">Mission Mars n'est pas une prestation commerciale : c'est mon terrain d'entraînement. C'est là que j'ai appris à écrire une accroche efficace, à rythmer un montage pour éviter le décrochage, et à analyser des statistiques pour comprendre ce qui fonctionne réellement. Ce sont ces mêmes réflexes que j'applique à vos vidéos.</p>
-
-    <div class="tools-row reveal">
-      <span class="label">Outils utilisés au quotidien</span>
-      <span class="tool-chip">CapCut</span>
-      <span class="tool-chip">Canva</span>
-      <span class="tool-chip">Meta Business Suite</span>
-    </div>
-  </div>
-</section>
-
-<div class="awning awning--to-paper2"></div>
-
-<section id="tarifs" class="wrap">
-  <div class="section-head reveal">
-    <p class="eyebrow">Tarifs</p>
-    <h2>Des prestations claires, pensées pour un commerce local.</h2>
-    <p>Vous me transmettez vos rushs, ou je me déplace selon la formule choisie : je prends en charge le montage, la création de publications, ou les deux. Tarifs communiqués sur devis, ajustés selon le volume.</p>
-  </div>
-
-  <div class="price-grid">
-    <div class="price-card reveal">
-      <span class="price-label">À l'unité</span>
-      <h3>Montage vidéo</h3>
-      <div class="amount">XX € <small>/ vidéo</small></div>
-      <ul>
-        <li>À partir de vos rushs</li>
-        <li>Format court, adapté aux réseaux</li>
-        <li>Une reprise incluse</li>
-      </ul>
-    </div>
-
-    <div class="price-card featured reveal">
-      <span class="price-label">Le plus choisi</span>
-      <h3>Pack 3 à 4 vidéos</h3>
-      <div class="amount">XX € <small>/ pack</small></div>
-      <ul>
-        <li>Tarif dégressif à l'unité</li>
-        <li>Cohérence de style sur l'ensemble</li>
-        <li>Livraison échelonnée possible</li>
-      </ul>
-    </div>
-
-    <div class="price-card reveal">
-      <span class="price-label">Réseaux</span>
-      <h3>Pack posts</h3>
-      <div class="amount">XX € <small>/ 2-3 posts</small></div>
-      <ul>
-        <li>Visuel Canva + légende</li>
-        <li>Hashtags ciblés local</li>
-        <li>Prêt à publier</li>
-      </ul>
-    </div>
-
-    <div class="price-card reveal">
-      <span class="price-label">Formation</span>
-      <h3>Prise en main Meta Business Suite</h3>
-      <div class="amount">XX € <small>/ session</small></div>
-      <ul>
-        <li>Publier et programmer</li>
-        <li>Répondre aux messages</li>
-        <li>Lire les statistiques de base</li>
-      </ul>
-    </div>
-
-    <div class="price-card reveal">
-      <span class="price-label">Sur place</span>
-      <h3>Tournage sur site</h3>
-      <div class="amount">Devis <small>selon trajet</small></div>
-      <ul>
-        <li>Je filme moi-même en boutique</li>
-        <li>Déplacement Haguenau et alentours</li>
-        <li>Combinable avec un pack montage</li>
-      </ul>
-    </div>
-
-    <div class="price-card reveal">
-      <span class="price-label">Sur mesure</span>
-      <h3>Autre besoin ?</h3>
-      <div class="amount">On en parle</div>
-      <ul>
-        <li>Volume plus important</li>
-        <li>Suivi régulier</li>
-        <li>Devis adapté à votre situation</li>
-      </ul>
-    </div>
-  </div>
-
-  <p class="price-note reveal">Tarifs indicatifs — les montants définitifs (« XX ») seront communiqués sur devis, selon le volume et la formule choisie.</p>
-</section>
-
-<section id="contact" class="wrap contact">
-  <div class="contact-card reveal">
-    <p class="eyebrow" style="color:var(--paper-soft); opacity:0.75;">Contact</p>
-    <h2>Échangeons sur votre projet</h2>
-    <p style="margin-top:14px; opacity:0.85;">Décrivez-moi votre commerce et ce que vous souhaitez mettre en avant : je reviens vers vous rapidement avec une proposition adaptée.</p>
-    <div class="contact-list">
-      <a href="mailto:lucashoff57@gmail.com">lucashoff57@gmail.com</a>
-      <a href="tel:+33760325522">07 60 32 55 22</a>
-    </div>
-  </div>
-  <div class="contact-side reveal">
-    <p class="eyebrow">Basé dans le Bas-Rhin</p>
-    <h3 style="margin-top:10px; font-size:1.4rem;">Premier retour sous 24 à 48h</h3>
-    <p style="margin-top:14px;">Chaque montage fait l'objet d'un soin particulier : le délai de livraison est défini ensemble et garanti dès le devis.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap footer-top">
-    <div class="footer-brand">
-      <div class="logo">Devanture<span>.</span></div>
-      <p>Vidéo et réseaux sociaux pour les commerces du Bas-Rhin. Montage, miniature et légende : chaque vidéo est livrée prête à être publiée.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Le site</h4>
-      <ul>
-        <li><a href="#tourisme">Office de Tourisme</a></li>
-        <li><a href="#missionmars">Mission Mars</a></li>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#fonctionnement">Fonctionnement</a></li>
         <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:lucashoff57@gmail.com">lucashoff57@gmail.com</a></li>
-        <li><a href="tel:+33760325522">07 60 32 55 22</a></li>
-        <li class="muted">Basé à Haguenau</li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <span>© 2026 Devanture — Lucas Hoffmann</span>
-  </div>
-</footer>
 
-<script>
-(function(){
-  "use strict";
+      <a class="nav-cta" href="#contact">Échanger sur votre projet</a>
 
-  const tourismeVideos = [
-    {
-      title: "L'Épicurie Fine — épicerie fine",
-      desc: "Mise en valeur de l'ambiance boutique, sélection des produits du terroir et accroche conçue pour déclencher la visite.",
-      chips: ["Boutique", "Tournage + montage"],
-      video: "assets/videos/tourisme-1.mp4",
-      poster: "assets/images/tourisme-1-poster.jpg"
-    },
-    {
-      title: "Fun Parc Brumath — loisirs",
-      desc: "Format dynamique construit autour d'une question directe pour capter un public familial en quête d'activités.",
-      chips: ["Loisirs", "Accroche directe"],
-      video: "assets/videos/tourisme-2.mp4",
-      poster: "assets/images/tourisme-2-poster.jpg"
-    },
-    {
-      title: "Immersion dans un gîte",
-      desc: "Visite guidée structurée selon un parcours logique, pensée pour susciter la projection dans le séjour.",
-      chips: ["Hébergement", "Storytelling"],
-      video: "assets/videos/tourisme-3.mp4",
-      poster: "assets/images/tourisme-3-poster.jpg"
-    },
-    {
-      title: "Bax Bowling — loisirs indoor",
-      desc: "Cadrage rythmé et ambiance mise en avant pour promouvoir une activité de groupe accessible toute l'année.",
-      chips: ["Loisirs", "Sortie de groupe"],
-      video: "assets/videos/tourisme-4.mp4",
-      poster: "assets/images/tourisme-4-poster.jpg"
-    }
-  ];
+      <button
+        class="burger"
+        id="burgerBtn"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
 
-  const posts = [
-    {
-      title: "Miel'sace — « Du rayon au pot »",
-      desc: "Mise en valeur du circuit court et de l'authenticité d'un produit local, avec une composition contrastée et percutante.",
-      img: "assets/images/post-1.jpg",
-      alt: "Post Miel'sace — Du rayon au pot"
-    },
-    {
-      title: "Boulangerie d'Alsace — Savoir-faire artisanal",
-      desc: "Mise en avant du temps de fermentation et de l'exigence du métier, pour valoriser la qualité du produit brut.",
-      img: "assets/images/post-2.jpg",
-      alt: "Post Boulangerie d'Alsace — Savoir-faire"
-    },
-    {
-      title: "Gîte &amp; Conciergerie — Invitation au séjour",
-      desc: "Visuel immersif orienté réservation, avec appel à l'action clair et hiérarchie éditoriale pensée pour convertir.",
-      img: "assets/images/post-3.jpg",
-      alt: "Post Gîte &amp; Conciergerie"
-    }
-  ];
+  <main id="main-content">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="reveal in">
+        <p class="eyebrow">Calivane Studio — Vidéo &amp; contenus numériques</p>
 
-  const marsVideos = [
-    {
-      title: "Vidéo la plus vue — 492 896 vues",
-      desc: "Le format ayant généré le plus de vues sur le compte.",
-      video: "assets/videos/missionmars-1.mp4",
-      poster: "assets/images/missionmars-1-poster.jpg"
-    },
-    {
-      title: "Meilleur taux d'engagement",
-      desc: "Vidéo enregistrant le meilleur rapport entre interactions et vues.",
-      video: "assets/videos/missionmars-2.mp4",
-      poster: "assets/images/missionmars-2-poster.jpg"
-    },
-    {
-      title: "Dernière publication",
-      desc: "Illustration du rythme de publication actuellement tenu.",
-      video: "assets/videos/missionmars-3.mp4",
-      poster: "assets/images/missionmars-3-poster.jpg"
-    }
-  ];
+        <h1 id="hero-title">
+          Une vidéo qui donne envie de pousser <em>votre porte</em>.
+        </h1>
 
-  const renderVideoCard = (v) => `
-    <article class="video-card">
-      <div class="video-frame">
-        <video controls preload="none" playsinline poster="${v.poster}">
-          <source src="${v.video}" type="video/mp4">
+        <p class="hero-sub">
+          Je conçois des vidéos courtes et des publications adaptées aux
+          commerçants, artisans, entreprises et organismes professionnels,
+          pensées pour présenter clairement leur activité sur les réseaux
+          sociaux.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">
+            Échanger sur votre projet
+          </a>
+
+          <a class="btn btn-ghost" href="#realisations">
+            Voir mes réalisations
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media reveal in">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="assets/images/hero-poster.jpg"
+        >
+          <source src="assets/videos/hero-loop.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="video-body">
-        <h3>${v.title}</h3>
-        <p>${v.desc}</p>
-        <div class="video-meta">${v.chips.map(c => `<span class="chip">${c}</span>`).join("")}</div>
+    </section>
+
+    <div class="awning awning--to-paper" aria-hidden="true"></div>
+
+    <section class="wrap about" aria-label="À propos de Lucas Hoffmann">
+      <div class="about-card reveal">
+        <p class="eyebrow">À propos</p>
+
+        <h2>Lucas Hoffmann</h2>
+
+        <p class="role">Créateur vidéo &amp; contenus numériques</p>
+
+        <p class="study">
+          Étudiant en 3<sup>e</sup> année de BUT MMI
+        </p>
+
+        <p class="about-summary">
+          Ancien stagiaire vidéo et réseaux sociaux à l’Office de Tourisme
+          du Pays de Haguenau. Basé à Haguenau, je peux me déplacer dans le
+          Bas-Rhin selon le projet et réaliser des missions de montage à
+          distance partout en France.
+        </p>
+
+        <div class="tag-row" aria-label="Compétences et outils">
+          <span class="tag">Montage vidéo</span>
+          <span class="tag">Création de publications</span>
+          <span class="tag">CapCut</span>
+          <span class="tag">Canva</span>
+        </div>
       </div>
-    </article>`;
 
-  const renderMarsCard = (v) => `
-    <article class="mars-card reveal">
-      <div class="mars-frame">
-        <video controls preload="none" playsinline poster="${v.poster}">
-          <source src="${v.video}" type="video/mp4">
-        </video>
+      <div class="about-text reveal">
+        <p class="eyebrow">En quelques mots</p>
+
+        <h2>
+          Une expérience de terrain complétée par un projet personnel consacré
+          aux formats courts.
+        </h2>
+
+        <p>
+          Pendant mon stage à
+          <strong>l’Office de Tourisme du Pays de Haguenau</strong>, j’ai
+          participé à la préparation, au tournage, au montage et à la
+          publication de contenus destinés à valoriser les adhérents du
+          territoire, notamment des gîtes, des centres de loisirs et des
+          boutiques.
+        </p>
+
+        <p>
+          En parallèle, j’ai développé <strong>Mission Mars</strong>, un projet
+          personnel publié sur Facebook. Désormais terminé, ce projet m’a
+          permis d’expérimenter les accroches, le rythme du montage et
+          l’analyse des statistiques disponibles, sans constituer une
+          prestation réalisée pour un client.
+        </p>
       </div>
-      <div class="mars-body">
-        <h3>${v.title}</h3>
-        <p>${v.desc}</p>
+    </section>
+
+    <section id="realisations" class="wrap" aria-labelledby="realisations-title">
+      <div class="section-head section-head--wide reveal">
+        <p class="eyebrow">
+          Réalisations — Office de Tourisme du Pays de Haguenau
+        </p>
+
+        <h2 id="realisations-title">
+          Capter le regard en 20 secondes, donner envie de venir le week-end
+          même.
+        </h2>
+
+        <p>
+          Chaque vidéo répond à un même objectif : présenter un adhérent du
+          territoire de façon à susciter l’envie de le découvrir.
+        </p>
       </div>
-    </article>`;
 
-  const renderPostCard = (p) => `
-    <article class="post-card reveal">
-      <div class="post-frame"><img src="${p.img}" alt="${p.alt}"></div>
-      <div class="post-body">
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
+      <div class="context-box reveal">
+        <p>
+          <strong>Contexte : stage</strong>
+        </p>
+
+        <p>
+          Ces contenus ont été produits dans le cadre de mon stage à l’Office
+          de Tourisme du Pays de Haguenau. J’ai participé à l’ensemble de leur
+          réalisation : préparation des sujets, écriture des accroches,
+          tournage, montage, sous-titrage, création des miniatures, rédaction
+          et publication des contenus, puis analyse des performances.
+        </p>
+
+        <p>
+          Selon les besoins de chaque sujet, ce travail comprenait également
+          l’écriture des scripts, la prise de son lorsque nécessaire et la
+          programmation des publications sur les réseaux. Ces réalisations ne
+          sont pas présentées comme des commandes facturées par Calivane
+          Studio.
+        </p>
       </div>
-    </article>`;
 
-  function mountCards(){
-    const track = document.getElementById("carouselTrack");
-    const marsGrid = document.getElementById("marsGrid");
-    const postRow = document.getElementById("postRow");
-    if (track) track.innerHTML = tourismeVideos.map(renderVideoCard).join("");
-    if (marsGrid) marsGrid.innerHTML = marsVideos.map(renderMarsCard).join("");
-    if (postRow) postRow.innerHTML = posts.map(renderPostCard).join("");
-  }
+      <!-- TODO AVANT PUBLICATION : obtenir l’autorisation écrite de l’Office de Tourisme et vérifier les droits de réutilisation des vidéos, établissements, personnes, musiques et marques visibles. -->
+      <!-- TODO AVANT PUBLICATION : vérifier en particulier les droits de rediffusion commerciale des musiques provenant de CapCut gratuit dans les vidéos de stage. -->
 
-  function initHeroVideo(){
-    const heroVid = document.querySelector(".hero-media video");
-    if (!heroVid) return;
-    heroVid.muted = true;
-    const start = () => heroVid.play().catch(() => {});
-    start();
-    window.addEventListener("touchstart", start, { once: true });
-  }
+      <div
+        class="carousel-container reveal"
+        id="carouselContainer"
+        aria-label="Réalisations vidéo effectuées pendant le stage"
+      >
+        <button
+          class="carousel-arrow prev is-hidden"
+          id="arrowPrev"
+          type="button"
+          aria-label="Afficher les réalisations précédentes"
+        >
+          <span aria-hidden="true">‹</span>
+        </button>
 
-  function initBurgerMenu(){
-    const burger = document.getElementById("burgerBtn");
-    const navLinks = document.getElementById("navLinks");
-    if (!burger || !navLinks) return;
-    burger.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-    navLinks.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
+        <button
+          class="carousel-arrow next"
+          id="arrowNext"
+          type="button"
+          aria-label="Afficher les réalisations suivantes"
+        >
+          <span aria-hidden="true">›</span>
+        </button>
 
-  function initRevealOnScroll(prefersReduced){
-    const revealEls = document.querySelectorAll(".reveal");
-    if (prefersReduced){
-      revealEls.forEach(el => el.classList.add("in"));
-      return;
-    }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting){
-          entry.target.classList.add("in");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => observer.observe(el));
-  }
+        <div class="carousel-viewport" id="carouselViewport">
+          <div class="carousel-track" id="carouselTrack"></div>
+        </div>
+      </div>
+    </section>
 
-  const formatNumber = (n) => n.toLocaleString("fr-FR");
+    <section class="wrap" aria-labelledby="publications-title">
+      <div class="section-head section-head--wide reveal">
+        <p class="eyebrow">Concepts de publications</p>
 
-  function animateCount(el, prefersReduced){
-    const target = parseInt(el.getAttribute("data-target"), 10);
-    const suffix = el.getAttribute("data-suffix") || "";
-    if (prefersReduced){
-      el.textContent = formatNumber(target) + suffix;
-      return;
-    }
-    const duration = 1400;
-    const start = performance.now();
-    function tick(now){
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = formatNumber(Math.floor(eased * target)) + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = formatNumber(target) + suffix;
-    }
-    requestAnimationFrame(tick);
-  }
+        <h2 id="publications-title">
+          Des pistes visuelles pensées pour valoriser différents commerces.
+        </h2>
 
-  function initStatCounters(prefersReduced){
-    const statNums = document.querySelectorAll(".stat .num");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting){
-          animateCount(entry.target, prefersReduced);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    statNums.forEach(el => observer.observe(el));
-  }
+        <p>
+          Ces études de style illustrent ma manière d’adapter une identité
+          visuelle, une accroche et un appel à l’action à différents secteurs
+          d’activité.
+        </p>
+      </div>
 
-  function initCarousel(prefersReduced){
-    const container = document.getElementById("carouselContainer");
-    const track = document.getElementById("carouselTrack");
-    const prevBtn = document.getElementById("arrowPrev");
-    const nextBtn = document.getElementById("arrowNext");
-    const cards = track ? Array.from(track.querySelectorAll(".video-card")) : [];
-    if (!container || !track || !cards.length || !prevBtn || !nextBtn) return;
+      <!-- TODO AVANT PUBLICATION : vérifier les conditions d’utilisation commerciale et de présentation en portfolio des ressources Canva utilisées. -->
 
-    function updateArrowState(){
-      const maxScroll = track.scrollWidth - track.clientWidth - 2;
-      prevBtn.classList.toggle("is-hidden", track.scrollLeft <= 4);
-      nextBtn.classList.toggle("is-hidden", track.scrollLeft >= maxScroll);
-    }
+      <div class="post-row" id="postRow"></div>
 
-    function scrollByPage(direction){
-      const style = getComputedStyle(track);
-      const gap = parseFloat(style.columnGap || style.gap || "0");
-      const cardWidth = cards[0].getBoundingClientRect().width + gap;
-      const visibleCount = Math.max(1, Math.round(track.clientWidth / cardWidth));
-      track.scrollBy({ left: direction * cardWidth * visibleCount, behavior: prefersReduced ? "auto" : "smooth" });
-    }
+      <p class="post-disclaimer reveal">
+        Ces créations sont des études de style réalisées pour illustrer
+        différentes directions graphiques. Elles ne correspondent pas à des
+        commandes clients. Elles ont été conçues par Lucas Hoffmann à partir
+        d’une page vierge dans Canva avec des ressources gratuites proposées
+        par le service.
+      </p>
+    </section>
 
-    nextBtn.addEventListener("click", () => scrollByPage(1));
-    prevBtn.addEventListener("click", () => scrollByPage(-1));
-    track.addEventListener("scroll", updateArrowState, { passive: true });
-    window.addEventListener("resize", updateArrowState);
-    updateArrowState();
-  }
+    <div class="awning awning--to-navy" aria-hidden="true"></div>
 
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    <section id="missionmars" class="dark" aria-labelledby="missionmars-title">
+      <div class="wrap">
+        <div class="section-head section-head--wide reveal">
+          <p class="eyebrow">Projet personnel</p>
 
-  mountCards();
-  initHeroVideo();
-  initBurgerMenu();
-  initRevealOnScroll(prefersReduced);
-  initStatCounters(prefersReduced);
-  initCarousel(prefersReduced);
-})();
-</script>
+          <h2 id="missionmars-title">Mission Mars</h2>
 
+          <p>
+            Un compte lancé par intérêt personnel pour expérimenter les
+            formats courts, travailler les accroches, le rythme du montage et
+            l’analyse des performances. En trois mois, le projet a rassemblé
+            une audience réelle et m’a permis de tester concrètement différents
+            choix éditoriaux.
+          </p>
+
+          <span class="status-badge">
+            Projet personnel — non réalisé pour un client
+          </span>
+        </div>
+
+        <div class="stat-grid" id="statGrid">
+          <div class="stat reveal">
+            <div class="num" data-target="10554">0</div>
+            <div class="label">Abonnés</div>
+          </div>
+
+          <div class="stat reveal">
+            <div class="num" data-target="1400000" data-suffix="+">0</div>
+            <div class="label">Vues cumulées</div>
+          </div>
+
+          <div class="stat reveal">
+            <div class="num" data-target="492896">0</div>
+            <div class="label">Vues sur la vidéo la plus vue</div>
+          </div>
+
+          <div class="stat reveal">
+            <div class="num" data-target="3" data-suffix=" mois">0</div>
+            <div class="label">Depuis le lancement (mi-mai)</div>
+          </div>
+        </div>
+
+        <p class="mars-date reveal">
+          Statistiques relevées sur Facebook le 30 août 2026. Projet désormais
+          terminé.
+        </p>
+
+        <!-- TODO AVANT PUBLICATION : vérifier les licences des banques d’images, des contenus NASA, des générations vidéo IA et de la voix IA CapCut utilisés dans Mission Mars. Vérifier également les pistes audio finales. -->
+
+        <div class="mars-grid" id="marsGrid"></div>
+
+        <p class="mars-note reveal">
+          Mission Mars n’est pas une prestation commerciale : c’est un terrain
+          d’expérimentation sur lequel j’ai travaillé la recherche de sujets,
+          l’écriture des accroches, le rythme du montage et l’analyse des
+          statistiques disponibles. J’utilise ces apprentissages pour concevoir
+          des contenus adaptés au sujet, au public et à la plateforme de chaque
+          projet.
+        </p>
+
+        <div class="mars-actions reveal">
+          <a
+            class="btn btn-dark-ghost"
+            href="https://www.facebook.com/profile.php?id=61589001766081"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Voir la page Mission Mars sur Facebook
+          </a>
+        </div>
+
+        <div class="tools-row reveal">
+          <span class="label">Outils utilisés pour ce type de contenu</span>
+          <span class="tool-chip">CapCut</span>
+          <span class="tool-chip">Canva</span>
+          <span class="tool-chip">Meta Business Suite</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="awning awning--to-paper2" aria-hidden="true"></div>
+
+    <section id="fonctionnement" class="wrap" aria-labelledby="fonctionnement-title">
+      <div class="section-head section-head--wide reveal">
+        <p class="eyebrow">Fonctionnement</p>
+
+        <h2 id="fonctionnement-title">
+          Une collaboration simple, du premier échange à la livraison.
+        </h2>
+
+        <p>
+          Que vous disposiez déjà de fichiers vidéo ou que le tournage soit
+          réalisé sur place, chaque étape est définie clairement avant de
+          commencer.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card reveal">
+          <span class="process-number" aria-hidden="true">01</span>
+          <h3>Premier échange</h3>
+          <p>
+            Lors d’un premier échange, nous définissons ensemble le sujet,
+            l’objectif, le réseau de diffusion et le format le plus adapté à
+            votre activité.
+          </p>
+        </article>
+
+        <article class="process-card reveal">
+          <span class="process-number" aria-hidden="true">02</span>
+          <h3>Rushs ou tournage</h3>
+          <p>
+            Vous me transmettez vos fichiers vidéo, ou je réalise un tournage
+            au smartphone dans votre établissement selon la formule choisie.
+          </p>
+        </article>
+
+        <article class="process-card reveal">
+          <span class="process-number" aria-hidden="true">03</span>
+          <h3>Montage et validation</h3>
+          <p>
+            Je réalise une première version adaptée aux réseaux sociaux. Une
+            série de modifications regroupées est incluse selon les conditions
+            définies dans le devis.
+          </p>
+        </article>
+
+        <article class="process-card reveal">
+          <span class="process-number" aria-hidden="true">04</span>
+          <h3>Livraison</h3>
+          <p>
+            Vous recevez les fichiers finaux dans les formats convenus, prêts
+            à être publiés sur les réseaux concernés.
+          </p>
+        </article>
+      </div>
+
+      <p class="process-note reveal">
+        Le démarrage de la prestation intervient après acceptation du devis et
+        versement d’un acompte de 30 %.
+      </p>
+
+      <div class="button-row reveal">
+        <a class="btn btn-primary" href="#contact">
+          Échanger sur votre projet
+        </a>
+      </div>
+    </section>
+
+    <section id="tarifs" class="wrap" aria-labelledby="tarifs-title">
+      <div class="section-head section-head--wide reveal">
+        <p class="eyebrow">Tarifs</p>
+
+        <h2 id="tarifs-title">
+          Des prestations claires, pensées pour les professionnels.
+        </h2>
+
+        <p>
+          Vous me transmettez vos rushs, ou je me déplace selon la formule
+          choisie. Je réalise les contenus convenus, puis je vous livre les
+          fichiers prêts à publier. Vous restez responsable de leur publication
+          sur vos propres comptes.
+        </p>
+      </div>
+
+      <div class="price-grid">
+        <article class="price-card reveal">
+          <span class="price-label">À l’unité</span>
+          <h3>Montage vidéo</h3>
+          <div class="amount">XX € <small>/ vidéo</small></div>
+          <ul>
+            <li>À partir de vos rushs</li>
+            <li>Format court adapté aux réseaux sociaux</li>
+            <li>Une série de modifications regroupées incluse</li>
+          </ul>
+        </article>
+
+        <article class="price-card featured reveal">
+          <span class="price-label">Le plus choisi</span>
+          <h3>Pack 3 à 4 vidéos</h3>
+          <div class="amount">XX € <small>/ pack</small></div>
+          <ul>
+            <li>Tarif dégressif à l’unité</li>
+            <li>Cohérence de style sur l’ensemble</li>
+            <li>Livraison échelonnée possible si elle est prévue au devis</li>
+          </ul>
+        </article>
+
+        <article class="price-card reveal">
+          <span class="price-label">Réseaux</span>
+          <h3>Pack publications</h3>
+          <div class="amount">XX € <small>/ 2-3 publications</small></div>
+          <ul>
+            <li>Créations graphiques distinctes au format JPG ou PNG</li>
+            <li>Légendes et hashtags locaux ciblés</li>
+            <li>Contenus prêts à être publiés par le client</li>
+          </ul>
+        </article>
+
+        <article class="price-card reveal">
+          <span class="price-label">Accompagnement</span>
+          <h3>Accompagnement Meta Business Suite</h3>
+          <div class="amount">XX € <small>/ session</small></div>
+          <ul>
+            <li>Jusqu’à 1 h 30</li>
+            <li>Publier, programmer et consulter les statistiques de base</li>
+            <li>Sur votre appareil, sans conservation de mot de passe</li>
+          </ul>
+        </article>
+
+        <article class="price-card reveal">
+          <span class="price-label">Sur place</span>
+          <h3>Tournage sur site</h3>
+          <div class="amount">Devis <small>selon trajet</small></div>
+          <ul>
+            <li>Tournage au smartphone pour des formats courts</li>
+            <li>Déplacement à Haguenau et dans les alentours</li>
+            <li>Déplacement plus large possible selon le projet et le devis</li>
+          </ul>
+        </article>
+
+        <article class="price-card reveal">
+          <span class="price-label">Sur mesure</span>
+          <h3>Autre besoin&nbsp;?</h3>
+          <div class="amount">On en parle</div>
+          <ul>
+            <li>Volume plus important</li>
+            <li>Besoin récurrent défini précisément</li>
+            <li>Devis adapté à votre situation</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- TODO AVANT PUBLICATION : remplacer tous les « XX € » uniquement après validation des tarifs définitifs, sans modifier arbitrairement les formules. -->
+
+      <p class="price-note reveal">
+        Tarifs indicatifs — les montants définitifs (« XX ») seront communiqués
+        sur devis, selon le volume et la formule choisie.
+      </p>
+
+      <div class="price-details">
+        <article class="price-detail-card reveal">
+          <h3>Livraison des vidéos</h3>
+          <ul>
+            <li>Fichier MP4.</li>
+            <li>Généralement 1080 × 1920 px pour un format vertical.</li>
+            <li>Autres formats uniquement s’ils sont prévus au devis.</li>
+            <li>Fichiers sources et projets CapCut non inclus.</li>
+          </ul>
+        </article>
+
+        <article class="price-detail-card reveal">
+          <h3>Livraison des publications graphiques</h3>
+          <ul>
+            <li>Fichier JPG ou PNG.</li>
+            <li>Dimensions adaptées au réseau prévu.</li>
+            <li>Légende remise par e-mail ou dans un document texte.</li>
+            <li>Fichier Canva modifiable non inclus, sauf mention contraire au devis.</li>
+          </ul>
+        </article>
+
+        <article class="price-detail-card reveal">
+          <h3>Éléments généralement compris avec une vidéo</h3>
+          <p>
+            Sauf disposition contraire du devis, chaque vidéo peut comprendre
+            le montage, une miniature simple, une proposition de légende
+            courte, des sous-titres simples incrustés lorsqu’elle contient une
+            voix ou des paroles, ainsi qu’une série de modifications regroupées.
+          </p>
+        </article>
+
+        <article class="price-detail-card reveal">
+          <h3>Publication et accès aux comptes</h3>
+          <p>
+            Je livre les contenus prêts à publier, mais je ne publie pas
+            directement sur les comptes du client. Aucun accès permanent n’est
+            demandé et aucun mot de passe n’est récupéré ou conservé.
+          </p>
+        </article>
+      </div>
+
+      <div class="button-row reveal">
+        <a class="btn btn-primary" href="#contact">
+          Échanger sur votre projet
+        </a>
+      </div>
+    </section>
+
+    <section id="faq" class="wrap" aria-labelledby="faq-title">
+      <div class="section-head reveal">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2 id="faq-title">Avant de commencer</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="reveal">
+          <summary>Dois-je déjà avoir des vidéos&nbsp;?</summary>
+          <div class="faq-answer">
+            <p>
+              Non. Vous pouvez me transmettre vos propres fichiers vidéo pour
+              le montage, ou choisir une formule avec tournage au smartphone à
+              Haguenau et dans les alentours.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>Qu’est-ce qu’un rush&nbsp;?</summary>
+          <div class="faq-answer">
+            <p>
+              Un rush est un fichier vidéo brut, avant le montage. Il peut avoir
+              été filmé avec un smartphone, un appareil photo ou une caméra. Je
+              vérifie avec vous si les fichiers disponibles sont adaptés au
+              projet.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>Comment sont réalisés les tournages&nbsp;?</summary>
+          <div class="faq-answer">
+            <p>
+              Les tournages proposés par Calivane Studio sont réalisés au
+              smartphone et pensés pour des contenus courts destinés aux
+              réseaux sociaux. Je ne propose pas actuellement de production
+              audiovisuelle lourde nécessitant une équipe ou du matériel
+              spécialisé.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>Où pouvez-vous vous déplacer&nbsp;?</summary>
+          <div class="faq-answer">
+            <p>
+              Les tournages sont proposés à Haguenau et dans les alentours. Un
+              déplacement plus large dans le Bas-Rhin peut être étudié selon le
+              projet. Le montage à distance est possible partout en France.
+            </p>
+            <p>
+              Les créneaux de tournage sont définis ensemble selon le projet et
+              mes disponibilités.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>Combien de modifications sont incluses&nbsp;?</summary>
+          <div class="faq-answer">
+            <p>
+              Une série de modifications regroupées est incluse. Les
+              ajustements doivent être transmis dans les sept jours calendaires
+              suivant la première version. Toute demande supplémentaire ou
+              tout changement important de direction est discuté avant d’être
+              réalisé.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>Sous quel délai la vidéo est-elle livrée&nbsp;?</summary>
+          <div class="faq-answer">
+            <p>
+              Le calendrier dépend du nombre de contenus, du tournage éventuel,
+              du volume de rushs et de la complexité du montage. La date ou la
+              période de livraison est définie clairement dans le devis.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>Publiez-vous directement sur mes réseaux&nbsp;?</summary>
+          <div class="faq-answer">
+            <p>
+              Non. Je vous livre les contenus prêts à publier, puis vous les
+              publiez depuis vos propres comptes. Je ne demande aucun accès
+              permanent à vos réseaux et je ne conserve aucun mot de passe.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>
+            Comment fonctionne l’accompagnement Meta Business Suite&nbsp;?
+          </summary>
+          <div class="faq-answer">
+            <p>
+              L’accompagnement dure jusqu’à 1 h 30 et peut être réalisé en
+              visioconférence, à Haguenau ou dans les alentours. Vous restez
+              connecté à vos comptes sur votre propre appareil. Une séance
+              complémentaire peut être proposée sur devis si nécessaire. Les
+              éventuels frais de déplacement sont annoncés avant validation.
+            </p>
+            <p>
+              Il s’agit d’un accompagnement pratique personnalisé, sans
+              certification et non éligible au CPF. Je ne peux pas garantir la
+              résolution d’un dysfonctionnement provenant de Meta, d’un compte
+              ou d’une configuration antérieure.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>Quels résultats pouvez-vous garantir&nbsp;?</summary>
+          <div class="faq-answer">
+            <p>
+              Je m’engage sur la réalisation des contenus définis dans le
+              devis, mais aucun nombre de vues, d’abonnés, d’interactions, de
+              demandes, de visites ou de ventes ne peut être garanti. Les
+              performances dépendent notamment du compte, de l’audience, de la
+              plateforme, du moment de publication, de la régularité et de
+              l’offre présentée.
+            </p>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary>Comment se déroule le premier échange&nbsp;?</summary>
+          <div class="faq-answer">
+            <p>
+              Vous me présentez votre activité, votre objectif et le contenu
+              que vous souhaitez mettre en avant. Cet échange permet de
+              vérifier le besoin et de préparer une proposition adaptée, sans
+              engagement.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap contact" aria-labelledby="contact-title">
+      <div class="contact-card reveal">
+        <p class="eyebrow">Contact</p>
+
+        <h2 id="contact-title">Échangeons sur votre projet</h2>
+
+        <p>
+          Présentez-moi votre activité et ce que vous souhaitez mettre en
+          avant. Je pourrai vous indiquer la formule la plus adaptée ou vous
+          proposer un devis selon votre besoin.
+        </p>
+
+        <p><strong>Premier échange sans engagement.</strong></p>
+
+        <div class="contact-list">
+          <a
+            href="mailto:lucashoff57@gmail.com?subject=Demande%20de%20renseignements%20%E2%80%94%20Calivane%20Studio&amp;body=Bonjour%20Lucas%2C%0D%0A%0D%0AJe%20vous%20contacte%20au%20sujet%20de%20mon%20projet%20de%20communication%20vid%C3%A9o.%0D%0A%0D%0AEntreprise%20%3A%0D%0AActivit%C3%A9%20%3A%0D%0APrestation%20envisag%C3%A9e%20%3A%0D%0AContenu%20%C3%A0%20mettre%20en%20avant%20%3A%0D%0AD%C3%A9lai%20souhait%C3%A9%20%3A%0D%0A%0D%0AVoici%20quelques%20informations%20compl%C3%A9mentaires%20%3A%0D%0A%0D%0ACordialement%2C"
+          >
+            lucashoff57@gmail.com
+          </a>
+
+          <a href="tel:+33760325522">07 60 32 55 22</a>
+        </div>
+      </div>
+
+      <div class="contact-side reveal">
+        <p class="eyebrow">Basé à Haguenau</p>
+
+        <h3>Je réponds généralement sous 24 à 48 h.</h3>
+
+        <p>
+          En cas d’indisponibilité, laissez-moi un message avec vos coordonnées
+          et je vous recontacterai dès que possible.
+        </p>
+
+        <p>
+          Basé à Haguenau — déplacements possibles dans le Bas-Rhin selon le
+          projet. Montage à distance possible partout en France.
+        </p>
+
+        <p class="contact-highlight">
+          Le calendrier de livraison est défini clairement dans le devis avant
+          le début de la prestation.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="Calivane Studio — Accueil">
+          <span class="logo-main">Calivane<span class="logo-dot" aria-hidden="true">.</span></span>
+          <span class="logo-studio">Studio</span>
+        </a>
+
+        <p>
+          Vidéos courtes et publications pour les professionnels. Chaque
+          prestation est définie clairement dans le devis et livrée dans les
+          formats convenus.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h2>Le site</h2>
+        <ul>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#fonctionnement">Fonctionnement</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h2>Informations</h2>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li>
+            <a href="politique-confidentialite.html">
+              Politique de confidentialité
+            </a>
+          </li>
+          <li><a href="cgv.html">CGV</a></li>
+          <li>
+            <a href="mailto:lucashoff57@gmail.com">
+              lucashoff57@gmail.com
+            </a>
+          </li>
+          <li><a href="tel:+33760325522">07 60 32 55 22</a></li>
+          <li class="muted">Basé à Haguenau</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span>
+        © <span id="currentYear">2026</span> Calivane Studio — Lucas Hoffmann
+      </span>
+    </div>
+  </footer>
+
+  <!-- TODO AVANT PUBLICATION : tester tous les liens internes, externes, téléphoniques et e-mail. -->
+  <!-- TODO AVANT PUBLICATION : tester tous les médias, posters et contrôles vidéo sans modifier leur stratégie de chargement. -->
+  <!-- TODO AVANT PUBLICATION : tester le site sur des appareils réels, notamment aux largeurs 320, 360, 390, 768, 900, 1024 et 1440 px. -->
+  <!-- TODO AVANT PUBLICATION : vérifier le sitemap et configurer Google Search Console uniquement après le lancement. -->
+  <!-- TODO AVANT PUBLICATION : mettre à jour toutes les URL si un domaine personnalisé est utilisé. -->
+  <!-- TODO AVANT PUBLICATION : vérifier une dernière fois la disponibilité et les risques liés au nom commercial Calivane Studio. -->
 </body>
 </html>

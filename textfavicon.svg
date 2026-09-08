@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="64"
+  height="64"
+  viewBox="0 0 64 64"
+  role="img"
+  aria-labelledby="favicon-title favicon-description"
+>
+  <title id="favicon-title">Calivane Studio</title>
+  <desc id="favicon-description">
+    Lettre C couleur encre accompagnée d’un point terracotta sur un fond papier.
+  </desc>
+
+  <rect
+    width="64"
+    height="64"
+    rx="12"
+    fill="#F2EFE9"
+  />
+
+  <path
+    d="M39.8 17.2C36.9 14.9 33.4 13.8 29.3 13.8C19.7 13.8 13 21.3 13 32C13 42.7 19.7 50.2 29.3 50.2C33.7 50.2 37.5 48.9 40.5 46.4L36.8 40.5C34.8 42 32.6 42.8 30 42.8C24.6 42.8 21 38.6 21 32C21 25.4 24.6 21.2 30 21.2C32.4 21.2 34.5 21.9 36.3 23.3L39.8 17.2Z"
+    fill="#1A1D2B"
+  />
+
+  <circle
+    cx="47.5"
+    cy="45.5"
+    r="5.5"
+    fill="#B3502B"
+  />
+</svg>
